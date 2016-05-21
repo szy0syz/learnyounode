@@ -1,18 +1,11 @@
-var sum1 = 0;
+// var fs = require('fs');
+// var buf = fs.readFileSync(process.argv[2]);
+// var str = buf.toString();
+// var tmp = str.split('\n');
+// console.log(tmp.length - 1);
 
-process.argv.forEach((val, index, array) => {
-  //console.log(`${index}: ${val}`);
-  if ((index >1)) {
-  	sum1 = Number(sum1) + Number(val);
-  };
-  
-});
+var fs = require('fs')
 
-console.log(sum1);
-
-// var result = 0
-
-//      for (var i = 2; i < process.argv.length; i++)
-//        result += Number(process.argv[i])
-
-//      console.log(result)
+var contents = fs.readFileSync(process.argv[2])
+var lines = contents.toString().split('\n').length-1
+console.log(lines)
