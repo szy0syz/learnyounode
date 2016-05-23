@@ -4,8 +4,15 @@
 // var tmp = str.split('\n');
 // console.log(tmp.length - 1);
 
-var fs = require('fs')
+// var fs = require('fs')
 
-var contents = fs.readFileSync(process.argv[2])
-var lines = contents.toString().split('\n').length-1
+// var contents = fs.readFileSync(process.argv[2])
+// var lines = contents.toString().split('\n').length-1
+// console.log(lines)
+
+var fs = require('fs');
+var lines;
+var contents = fs.readFile(process.argv[2],function(err,data){
+	lines = data.toString().split('\n').length-1;
+})
 console.log(lines)
