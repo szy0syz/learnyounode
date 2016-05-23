@@ -11,8 +11,7 @@
 // console.log(lines)
 
 var fs = require('fs');
-var lines;
 var contents = fs.readFile(process.argv[2],function(err,data){
-	lines = data.toString().split('\n').length-1;
+	console.log(data.toString().split('\n').length-1)
 })
-console.log(lines)
+// console.log(lines)
