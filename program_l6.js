@@ -1,6 +1,12 @@
-var my = require('./mymodule.js')
-//var o = new my()
-my.bar()
+var module = require('./mymodule.js')
 
-//var o = new my('dir','filter',function (){console.log()})
+var callback = function(err,fileList){
+	if(err) console.log(err)
+	else fileList.forEach(function(file,index){
+		console.log(file)
+	})
+}
+
+module(process.argv[2],process.argv[3],callback)
+
 
