@@ -1,7 +1,6 @@
 var my = require('./mymodule.js')
+//var o = new my()
+my.bar()
 
-var o = new my('dir','filter')
+//var o = new my('dir','filter',function (){console.log()})
 
-// console.log(my.bar(function(err,data){
-// 	console.log("szy")
-// }))
