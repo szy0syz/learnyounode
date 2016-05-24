@@ -1,27 +1,67 @@
-module.exports = function(dir,filter,callback){ 
+// exports.bar = function(callback){
+//   callback()
+// }
 
-	// function bar (callback){
-	// 	foo(function (err,data){
-	// 		if(err)
-	// 			return callback(err) //early retrurn
+// exports.handler = function(dir,filter,errCallback){
+  
+//   var fs = require("fs")
+//   var path = require("path")
 
-	// 		callback(null,data)
-	// 	})
-	// }
+//   var folder = process.argv[2]
+//   var ext = '.' + process.argv[3] 
 
-	// function bar (callback){
-	// 	foo(function (err,data){
-	// 		if(err)
-	// 			return callback(err) //early retrurn
+//   fs.readdir(folder,function(err,lists){
+//     if(err) 
+//       return errCallback(err)
 
-	// 		callback(null,data)
-	// 	})
-	// }
+//     lists.forEach(function(value,index){
+//       if(path.extname(value) === ext)
+//         console.log(value)
+//     })
 
-	console.log(dir,filter)
-	// console.log(process.argv[2])
-	// console.log(process.argv[3])
-	// console.log(process.argv[4])
-	// console.log(process.argv[5])
+//   })
 
+// }
+
+function bar(callback){
+  foo(function(err,data){
+    if (err) {
+      return callback(err)
+    }
+
+    callback(null,data)
+
+  })
 }
+
+
+module.exports = function(dir,filter,errCallback){ 
+
+  var fs = require("fs")
+  var path = require("path")
+
+  var folder = process.argv[2]
+  var ext = '.' + process.argv[3]
+
+  bar()
+
+  fs.readdir(folder,function(err,lists){
+    if(err) 
+      return errCallback(err)
+
+    lists.forEach(function(value,index){
+      if(path.extname(value) === ext)
+        console.log(value)
+    })
+  })
+}
+
+
+  // function bar (callback){
+  //  foo(function (err,data){
+  //    if(err)
+  //      return callback(err) //early retrurn
+
+  //    callback(null,data)
+  //  })
+  // }
